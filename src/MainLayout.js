@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { View, Alert } from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet } from "react-native";
 import { Navbar } from "./components/Navbar";
 import { MainScreen } from "./screens/MainScreen";
 import { TodoScreen } from "./screens/TodoScreen";
@@ -8,9 +8,21 @@ import { ScreenContext } from "./context/screens/screenContext";
 export const MainLayout = () => {
   const { todoId } = useContext(ScreenContext);
   return (
-    <View>
+    <View style={styles.wrapper}>
       <Navbar />
-      {todoId ? <TodoScreen /> : <MainScreen />}
+      <View style={styles.content}>
+        {todoId ? <TodoScreen /> : <MainScreen />}
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  content: {
+    flex: 1,
+  },
+});

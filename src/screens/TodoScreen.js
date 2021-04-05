@@ -18,8 +18,8 @@ export const TodoScreen = () => {
 
   const todo = todos.find((t) => t.id === todoId);
 
-  const handleUpdate = (text) => {
-    updateTodo(todo.id, text);
+  const handleUpdate = async (text) => {
+    await updateTodo(todo.id, text);
     setModal(false);
   };
 
