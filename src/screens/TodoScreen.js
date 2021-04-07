@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 import { EditModal } from "../components/EditModal";
@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: {
-    flexBasis: "40%",
+    flexBasis: Dimensions.get("window").width / 3,
   },
 });
